@@ -1,0 +1,9 @@
+tr.excess {
+    color: red;
+    border: 1px solid grey;
+}
+
+tr.notexcess {
+    color: green;
+    border: 1px solid grey;
+}
