@@ -2,6 +2,10 @@ package ru.javawebinar.topjava.util;
 
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.model.MealTo;
+import ru.javawebinar.topjava.model.Role;
+import ru.javawebinar.topjava.model.User;
+import ru.javawebinar.topjava.repository.inmemory.InMemoryMealRepository;
+import ru.javawebinar.topjava.repository.inmemory.InMemoryUserRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +20,20 @@ import java.util.stream.Collectors;
 
 public class MealsUtil {
     public static final int DEFAULT_CALORIES_PER_DAY = 2000;
+
+    public static void main(String[] args) {
+
+        InMemoryUserRepository userRepository = new InMemoryUserRepository();
+        userRepository.delete(1);
+        System.out.println(userRepository.getAll());
+
+    }
+
+    public static final List<User> users = Arrays.asList(
+            new User(null, "a", "asd", "1231", Role.USER),
+            new User(null, "b", "axc", "21331", Role.USER),
+            new User(null, "c", "qwe", "895659", Role.USER)
+    );
 
     public static final List<Meal> meals = Arrays.asList(
             new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0), "Завтрак", 500),
